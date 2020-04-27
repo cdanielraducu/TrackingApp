@@ -9,7 +9,7 @@
 </head>
 <body>
 <section class="b1">
-    <h1>HAIDA LA MUNTE!!</h1>
+    <h1>HAIDA LA MUNTEE!!</h1>
 
 </section>
 </body>
