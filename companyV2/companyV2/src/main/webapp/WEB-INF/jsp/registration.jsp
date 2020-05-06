@@ -10,9 +10,9 @@
 </head>
 <body>
 <section class="b1">
-<h1>Registration here</h1>
+<h1 style="color:white">Registration here</h1>
 
-    <form:form modelAttribute="registration">
+    <form:form modelAttribute="registration" cssStyle="color:white">
         <table>
             <tr>
                 <td>
