@@ -6,11 +6,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Registration</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-<h1>Registration here</h1>
+<section class="b1">
+<h1 style="color:white">Registration here</h1>
 
-    <form:form modelAttribute="registration">
+    <form:form modelAttribute="registration" cssStyle="color:white">
         <table>
             <tr>
                 <td>
@@ -18,6 +20,14 @@
                 </td>
                 <td>
                     <form:input path="name"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <spring:message code = "cui" />:
+                </td>
+                <td>
+                    <form:input path="cui"/>
                 </td>
             </tr>
 
@@ -28,6 +38,7 @@
             </tr>
         </table>
     </form:form>
+</section>
 
 </body>
 </html>
