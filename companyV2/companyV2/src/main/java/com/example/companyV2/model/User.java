@@ -1,9 +1,16 @@
 package com.example.companyV2.model;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "users")
 public class User {
 
     private String firstName;
     private String lastName;
+    @Id
     private String cnp;
     private String email;
     private String pass;

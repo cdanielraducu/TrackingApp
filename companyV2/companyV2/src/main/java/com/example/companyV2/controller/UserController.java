@@ -2,6 +2,8 @@ package com.example.companyV2.controller;
 
 import com.example.companyV2.model.Registration;
 import com.example.companyV2.model.User;
+import com.example.companyV2.repositories.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.UnsatisfiedServletRequestParameterException;
 import org.springframework.web.bind.annotation.*;
@@ -29,6 +31,10 @@ public class UserController {
         return user;
     }
 */
+
+    @Autowired
+    UserRepository userRepository;
+
     @GetMapping("user")
     public String getRegistration(@ModelAttribute("user") User user){
 
