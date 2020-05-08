@@ -1,29 +1,47 @@
 package com.example.companyV2.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class User {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
 
-    private String firstName;
-    private String lastName;
     private String cnp;
+    private String firstname;
+    private String lastname;
     private String email;
-    private String pass;
-    private String dataAng;
+    private String password;
 
+    public User(){}
 
-    public String getFirstName() {
-        return firstName;
+    public User(String cnp, String firstname, String lastname, String email, String password) {
+        this.cnp = cnp;
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.email = email;
+        this.password = password;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public User(int id, String cnp, String firstname, String lastname, String email, String password) {
+        this.id = id;
+        this.cnp = cnp;
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.email = email;
+        this.password = password;
     }
 
-    public String getLastName() {
-        return lastName;
+    public int getId() {
+        return id;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getCnp() {
@@ -34,6 +52,22 @@ public class User {
         this.cnp = cnp;
     }
 
+    public String getFirstname() {
+        return firstname;
+    }
+
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
+    }
+
+    public String getLastname() {
+        return lastname;
+    }
+
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
+    }
+
     public String getEmail() {
         return email;
     }
@@ -42,31 +76,11 @@ public class User {
         this.email = email;
     }
 
-    public String getPass() {
-        return pass;
+    public String getPassword() {
+        return password;
     }
 
-    public void setPass(String pass) {
-        this.pass = pass;
-    }
-
-    public String getDataAng() {
-        return dataAng;
-    }
-
-    public void setDataAng(String data_ang) {
-        this.dataAng = dataAng;
-    }
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", cnp='" + cnp + '\'' +
-                ", email='" + email + '\'' +
-                ", pass='" + pass + '\'' +
-                ", data_ang='" + dataAng + '\'' +
-                '}';
+    public void setPassword(String pass) {
+        this.password = pass;
     }
 }

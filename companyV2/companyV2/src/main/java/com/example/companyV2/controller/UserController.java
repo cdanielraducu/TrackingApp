@@ -1,47 +1,37 @@
 package com.example.companyV2.controller;
 
-import com.example.companyV2.model.Registration;
+import com.example.companyV2.Repositories.UserRepository;
 import com.example.companyV2.model.User;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.UnsatisfiedServletRequestParameterException;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller //
+import java.util.List;
+import java.util.Map;
+
+@RestController
 public class UserController {
 
-    /*@GetMapping("/user")
-    public User getUser(@RequestParam (value = "firstName", defaultValue = "Dani") String firstName,
-                        @RequestParam (value = "lastName", defaultValue = "Raducu") String lastName,
-                        @RequestParam (value = "cnp", defaultValue = "2020352584455") String cnp,
-                        @RequestParam (value = "email", defaultValue = "dani.raducu") String email,
-                        @RequestParam (value = "pass", defaultValue = "pass123") String pass,
-                        @RequestParam (value = "dataAng", defaultValue = "pss") String dataAng) {
-        User user = new User();
+    @Autowired
+    UserRepository userRepository;
 
-        user.setFirstName(firstName);
-        user.setLastName(lastName);
-        user.setCnp(cnp);
-        user.setEmail(email);
-        user.setPass(pass);
-        user.setDataAng(dataAng);
-
-
-        return user;
-    }
-*/
-    @GetMapping("user")
-    public String getRegistration(@ModelAttribute("user") User user){
-
-
-        return "user";
+    @GetMapping("/user")
+    public List<User> index() {
+        return userRepository.findAll();
     }
 
     @PostMapping("/user")
-    public String addUser(@ModelAttribute("user") User user) {
+    public User create(@RequestBody Map<String, String> body){
+        String cnp = body.get("cnp");
+        String firstname = body.get("firstname");
+        String lastname = body.get("lastname");
+        String email = body.get("email");
+        String password = body.get("password");
 
-        System.out.println(user.getFirstName() + " " + user.getLastName() + user.getCnp());
-
-        return "redirect:user";
+        return userRepository.save(new User(cnp,firstname, lastname, email, password));
     }
 
 }
+
