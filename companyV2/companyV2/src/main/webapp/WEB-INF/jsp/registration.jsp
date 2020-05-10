@@ -16,6 +16,14 @@
         <table>
             <tr>
                 <td>
+                    <spring:message code = "cui" />:
+                </td>
+                <td>
+                    <form:input path="CUI"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
                     <spring:message code="name" />:
                 </td>
                 <td>
@@ -24,13 +32,20 @@
             </tr>
             <tr>
                 <td>
-                    <spring:message code = "cui" />:
+                    <spring:message code="email" />:
                 </td>
                 <td>
-                    <form:input path="cui"/>
+                    <form:input path="email"/>
                 </td>
             </tr>
-
+            <tr>
+                <td>
+                    <spring:message code="password" />:
+                </td>
+                <td>
+                    <form:password path="password"/>
+                </td>
+            </tr>
             <tr>
                 <td colspan="2" >
                     <input type="submit" value="Add Registration">

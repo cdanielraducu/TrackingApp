@@ -62,15 +62,6 @@
                 </td>
             </tr>
             <tr>
-                <td>
-                    <spring:message code = "dataAng" />:
-                </td>
-                <td>
-                    <form:input path="dataAng"/>
-                </td>
-            </tr>
-
-            <tr>
                 <td colspan="2" >
                     <input type="submit" value="Add User">
                 </td>
