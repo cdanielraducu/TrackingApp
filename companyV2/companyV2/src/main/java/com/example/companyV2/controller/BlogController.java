@@ -1,6 +1,6 @@
 package com.example.companyV2.controller;
 
-import com.example.companyV2.Repositories.BlogRepository;
+import com.example.companyV2.repositories.BlogRepository;
 import com.example.companyV2.model.Blog;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

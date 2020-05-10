@@ -1,4 +1,4 @@
-package com.example.companyV2.Repositories;
+package com.example.companyV2.repositories;
 
 import com.example.companyV2.model.Blog;
 import org.springframework.data.jpa.repository.JpaRepository;
