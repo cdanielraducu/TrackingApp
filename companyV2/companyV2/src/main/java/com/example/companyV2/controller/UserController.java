@@ -1,6 +1,6 @@
 package com.example.companyV2.controller;
 
-import com.example.companyV2.Repositories.UserRepository;
+import com.example.companyV2.repositories.UserRepository;
 import com.example.companyV2.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
