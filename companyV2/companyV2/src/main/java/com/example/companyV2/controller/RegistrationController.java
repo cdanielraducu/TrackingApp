@@ -6,10 +6,7 @@ import com.example.companyV2.model.User;
 import com.example.companyV2.repositories.RegistrationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
 
@@ -27,6 +24,16 @@ public class RegistrationController {
     }
 
     @PostMapping("registration")
+    public String addRegistration(@RequestParam String CUI,
+                                  @RequestParam String name,
+                                  @RequestParam String email,
+                                  @RequestParam String password
+                                  ){
+        registrationRepository.save(new Company(CUI,name,email, password));
+         return "redirect:registration";
+    }
+
+    /*@PostMapping("registration")
     public String addRegistration(@RequestBody Map<String, String> body) {
         System.out.println(body);
         String CUI = body.get("cui");
@@ -41,5 +48,5 @@ public class RegistrationController {
         //+ " cu parola " + company.getPassword());
 
         return "redirect:registration";
-    }
+    }*/
 }
