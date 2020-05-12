@@ -13,5 +13,5 @@ public interface CompanyRepository extends CrudRepository<Company, Integer> {
     List<Company> findByCUIContaining(String text);
 
 
-
+    List<Company> findByEmailContainingOrPasswordContaining(String searchTerm, String searchTerm1);
 }
