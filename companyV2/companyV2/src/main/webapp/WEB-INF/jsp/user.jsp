@@ -23,18 +23,18 @@
         <table>
             <tr>
                 <td>
-                    <spring:message code="firstName" />:
+                    <spring:message code="firstname" />:
                 </td>
                 <td>
-                    <form:input path="firstName"/>
+                    <form:input path="firstname"/>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <spring:message code = "lastName" />:
+                    <spring:message code = "lastname" />:
                 </td>
                 <td>
-                    <form:input path="lastName"/>
+                    <form:input path="lastname"/>
                 </td>
             </tr>
             <tr>
@@ -55,10 +55,10 @@
             </tr>
             <tr>
                 <td>
-                    <spring:message code = "pass" />:
+                    <spring:message code = "password" />:
                 </td>
                 <td>
-                    <form:input path="pass"/>
+                    <form:input path="password"/>
                 </td>
             </tr>
             <tr>
