@@ -28,8 +28,8 @@
                 <td>${user.firstname}</td>
                 <td>${user.lastname}</td>
                 <td>${user.email}</td>
-                <td><a href="editemp/${user.id}">Edit</a></td>
-                <td><a href="deleteemp/${user.id}">Delete</a></td>
+                <td><a href="editUser/${user.id}">Edit</a></td>
+                <td><a href="deleteUser/${user.id}">Delete</a></td>
             </tr>
         </c:forEach>
     </table>

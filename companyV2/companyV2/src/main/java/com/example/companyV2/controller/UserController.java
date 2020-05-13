@@ -7,6 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import javax.print.DocFlavor;
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Map;
 
@@ -23,6 +25,33 @@ public class UserController {
         m.addAttribute("list",list);
 
         return "allusers";
+    }
+
+    @GetMapping(value = "deleteUser/{id}")
+    public String delete(@PathVariable int id){
+        userRepository.deleteById(id);
+        return "redirect:/allusers";
+    }
+
+    @GetMapping(value="/editUser/{id}")
+    public String edit(@PathVariable int id, Model m){
+        User user =userRepository.getOne(id);
+        m.addAttribute("command",user);
+        return "editUserForm";
+    }
+
+    @PostMapping("/editSave")
+    @Transactional
+    public String editSave(@ModelAttribute("user") User user) {
+        System.out.println(user);
+        /*User userUpdate = userRepository.getOne(user.getId());
+        userUpdate.setFirstname(user.getFirstname());
+        userUpdate.setEmail(user.getEmail());
+        userUpdate.setLastname(user.getLastname());*/
+        //userRepository.saveAndFlush(userUpdate);
+        userRepository.save(user);
+
+        return "redirect:/allusers";
     }
 
     @GetMapping("/user")
