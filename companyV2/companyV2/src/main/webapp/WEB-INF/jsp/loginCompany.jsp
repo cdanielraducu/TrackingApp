@@ -5,12 +5,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Registration</title>
+    <title>Login</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 <section class="b1">
-    <h1 style="color:white">Registration here</h1>
+    <h1 style="color:white">Login here</h1>
 
     <form:form modelAttribute="loginCompany" cssStyle="color:white">
         <table>
@@ -28,6 +28,11 @@
                 </td>
                 <td>
                     <form:password path="password"/>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" >
+                    <input type="submit" value="Submit login">
                 </td>
             </tr>
         </table>

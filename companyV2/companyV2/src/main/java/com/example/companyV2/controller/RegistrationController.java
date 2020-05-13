@@ -19,7 +19,6 @@ public class RegistrationController {
     @GetMapping("registration")
     public String getRegistration(@ModelAttribute("registration") Company company) {
 
-
         return "registration";
     }
 
